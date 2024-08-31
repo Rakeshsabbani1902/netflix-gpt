@@ -3,14 +3,14 @@ import Header from './Header'
 import { checkValidData } from '../utils/validate';
 import {  createUserWithEmailAndPassword ,signInWithEmailAndPassword ,updateProfile} from "firebase/auth";
 import {auth} from "../utils/firebase";
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { USER_AVAVTAR } from '../utils/constants';
 
 const Login = () => {
     const [isSignInForm , setIsSignInForm]= useState(true);
     const [errorMessage,setErrorMessage] = useState();
-    const navigate = useNavigate();
+    
     const dispatch = useDispatch();
 
     const name = useRef(null);
@@ -35,17 +35,17 @@ const handleButtonClick=()=>{
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    console.log(user);
+  
     updateProfile(user, {
       displayName: name.current.value,
-      photoURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMCBgSyTBDneWKr72GPHAcI3iMWZgq16wbA&s" 
+      photoURL: USER_AVAVTAR
     })
     .then(() => {
       // Profile updated!
       const {uid,email,displayName,photoURL} = auth.currentUser ;
           dispatch(addUser({uid : uid, email :email ,displayName : displayName,photoURL: photoURL}));
          
-      navigate("/browse");
+     
     })
     .catch((error) => {
       // An error occurred
@@ -70,8 +70,7 @@ const handleButtonClick=()=>{
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user)
-    navigate("/browse");
+    
     
   })
   .catch((error) => {
