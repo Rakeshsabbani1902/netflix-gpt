@@ -5,7 +5,7 @@ import {  createUserWithEmailAndPassword ,signInWithEmailAndPassword ,updateProf
 import {auth} from "../utils/firebase";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { USER_AVAVTAR } from '../utils/constants';
+import { BG_URL, USER_AVAVTAR } from '../utils/constants';
 
 const Login = () => {
     const [isSignInForm , setIsSignInForm]= useState(true);
@@ -92,7 +92,7 @@ const toggleSignInForm =()=>{
     <div>
         <Header/>
        <div className="absolute">
-         <img src="https://assets.nflxext.com/ffe/siteui/vlv3/20bf1f4d-1c73-48fd-8689-310d6dd80efc/81bdc063-cb8f-4afe-8a02-a3131ca4ef5e/IN-en-20240812-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7998f3b6-63e3-424a-8328-550cf777ddce_large.jpg" alt ="bg-image"/>
+         <img src={BG_URL} alt ="bg-image"/>
        </div>
        <form onSubmit = {(e)=> e.preventDefault()} className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
          <h1 className="font-bold text-3xl py-4">{ isSignInForm ? "Sign In " : "Sign Up"}</h1>

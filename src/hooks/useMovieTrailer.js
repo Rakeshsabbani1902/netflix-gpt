@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch } from "react-redux";
 import { addTrailerVideo } from "../utils/moviesSlice";
 import { useEffect } from "react";
@@ -23,7 +24,8 @@ const useMovieTrailer =(movieId)=>{
 
     useEffect(()=>{
         getMovieVideos();
-    },[])
+    
+    },[]);
 }
 
 export default useMovieTrailer;

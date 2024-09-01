@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import  { useEffect } from 'react'
 import {  API_OPTIONS } from "../utils/constants"
 import { useDispatch } from 'react-redux'
 import { addNowPlayingMovies } from '../utils/moviesSlice'
