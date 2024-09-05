@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailerVideo } from "../utils/moviesSlice";
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
@@ -8,7 +8,7 @@ const useMovieTrailer =(movieId)=>{
    
 
     const dispatch = useDispatch();
- 
+    const trailerVideo = useSelector(store=>store.movies.trailerVideo);
     //Fetch trailer video && updating the store with trailer video data
     
     const getMovieVideos= async ()=>{
@@ -23,7 +23,8 @@ const useMovieTrailer =(movieId)=>{
     };
 
     useEffect(()=>{
-        getMovieVideos();
+
+        !trailerVideo &&getMovieVideos();
     
     },[]);
 }

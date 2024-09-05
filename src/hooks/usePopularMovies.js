@@ -1,13 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react'
 import {  API_OPTIONS } from "../utils/constants"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addPopularMovies } from '../utils/moviesSlice'
 
 
 const usePopularMovies =()=>{
     //Fetch data form TMDG API and update the store 
     const dispatch = useDispatch();
+    const popularMovies = useSelector(store=>store.movies.popularMovies);
 
   const getusePopularMovies = async ()=>{
      
@@ -19,7 +20,7 @@ const usePopularMovies =()=>{
   }
 
   useEffect(()=>{
-    getusePopularMovies();
+    !popularMovies && getusePopularMovies();
   },[]);
 
    
