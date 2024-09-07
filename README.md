@@ -48,7 +48,6 @@ Added .env file
 Adding .env file to gitignore
 Made our Site Responsive
 
-
 # Features:
 -Login/Sign Up 
    - Sign In/Sign Up Form
