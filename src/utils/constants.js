@@ -21,4 +21,4 @@ export const API_OPTIONS = {
   ]
 
 
-  export const OPENAI_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+  export const OPENAI_KEY = "sk-951rXE2QWFAzyKReYhRu8iUL0XwPabVn74NT2mpuMlT3BlbkFJuD-YwRwVnCvANPMAcseyw3yt2uCdGy7kj41NrQbH4A";
