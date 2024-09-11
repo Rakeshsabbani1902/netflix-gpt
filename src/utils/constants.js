@@ -21,4 +21,4 @@ export const API_OPTIONS = {
   ]
 
 
-  export const OPENAI_KEY = "sk-05KRqMG6Q-REgIxPpwO4S2sryKBNn2wpyFC7bU9pWtT3BlbkFJ71ctH70M_Bzd8Md6sUz1lVGlTk2UYINQACWJIbbpQA";
+  export const OPENAI_KEY = "sk-3y-DHV6R8-kuoa13RFf182EV8UkWd1eu7B-D2DeZzmT3BlbkFJfxCP3v44rVNd5MrZq3WMZBlLARZQqV-IZ_hkcxg7IA";
